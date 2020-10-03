@@ -1,9 +1,13 @@
 <!DOCTYPE html>
     <head>
-        <title> Inventory Mangement </title>
+        <title> Inventory Management </title>
     </head>
 
     <body>
-      
+        {% for table in tables %}
+            {{titles[loop.index]}}
+            {{ table|safe }}
+        {% endfor %}
+      <p></p>
     </body>
 </html>
