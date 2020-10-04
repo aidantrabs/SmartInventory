@@ -21,10 +21,8 @@ def main():
         file = request.files['filename']    
         #we can also have inpt = file.read() <- hmm we actually need the file as a pandas Dataframe 
         # idk if this will work but we can try 
-        inpt = pd.read_csv( file ) 
-       
-        output = LinReg.Calculate( inpt )
-
+        inpt = LinReg( file )
+        output = inpt.Calculate()
         return render_template("output.html", output = output)
     else: 
         #Render main page
