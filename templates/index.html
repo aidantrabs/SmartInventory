@@ -1,15 +1,33 @@
-<!DOCTYPE html>
-    <head>
-        <title> Inventory Management </title>
-    </head>
+{% extends "base_generic.html" %}
+{% block title %} <title> Inventory Management </title> {% endblock %}
 
-    <body>
+{% block content %}
+    
     <!--
         {% for table in tables %}
             {{titles[loop.index]}}
             {{ table|safe }}
         {% endfor %}
     -->
+    {{db}}
+      <p></p>
+    
+        <form action="/" method="POST" enctype="multipart/form-data">
+      <p></p>
+
+        <form action="/" method="POST" enctype="multipart/form-data">
+      <p></p>
+
+        <form action="/" method="POST" enctype="multipart/form-data">
+      <p></p>
+
+        <form action="/" method="POST" enctype="multipart/form-data">
+      <p></p>
+
+        <form action="/" method="POST" enctype="multipart/form-data">
+      <p></p>
+
+        <form action="/" method="POST" enctype="multipart/form-data">
       <p></p>
 
         <form action="/" method="POST" enctype="multipart/form-data">
@@ -17,5 +35,4 @@
           <input type="submit">
         </form>
 
-    </body>
-</html>
+{% endblock %}
