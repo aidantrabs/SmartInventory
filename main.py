@@ -1,19 +1,17 @@
-from flask import Flask, render_template
-import pandas as pd
-import csv
-from sklearn.linear_model import LinearRegression
-
+from flask import Flask, render_template, request
+#import train
 
 app = Flask(__name__)
 
-@app.route("/")
-def main():
-    df = pd.read_csv('data/business_dynamics.csv')
-
-    
-
-    #Render main page
-    return render_template("index.html", tables=[df.to_html(classes='data')], titles=df.columns.values)
+@app.route("/", methods=["POST", 'GET'])
+def main():    
+    if request.method == 'POST':
+        filename = request.form['filename']
+        #output = train.linearRegression( filename )
+        return render_template("output.html", output = filename)
+    else: 
+        #Render main page
+        return render_template("index.html")#, #tables=[df.to_html(classes='data')], titles=df.columns.values)
 
 if __name__ == "__main__":
     app.run(debug = True)
