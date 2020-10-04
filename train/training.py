@@ -92,7 +92,7 @@ class LinReg:
 
         previousPurchases = lastday['item_cnt_day'] 
         lastdayArray = lastday.to_numpy() 
-        return abs((int)( np.matmul( clf.coef_, lastdayArray ) - previousPurchases )) 
+        return (int)( np.matmul( clf.coef_, lastdayArray ) - previousPurchases )
 
 
         #see I have no idea if this will work... we just took the youtube video code and ran with it 
