@@ -36,7 +36,8 @@ def predictions():
         # idk if this will work but we can try 
         inpt = LinReg( file )
         output = inpt.Calculate()
-        return render_template("predictions.html")
+        
+        return render_template("predictions.html", output = output)
     return render_template("predictions.html")
 
 if __name__ == "__main__":

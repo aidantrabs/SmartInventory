@@ -1,0 +1,31 @@
+{% extends "base_generic.html" %}
+{% block title %}<title>My Inventory Forecast</title>{% endblock %}
+{% block active_items %}
+<li class="nav-item">
+    <a class="nav-link" href="/">Submit Data<span class="sr-only">(current)</span></a>
+  </li>
+  <li class="nav-item active">
+    <a class="nav-link" href="/predictions">Inventory Forecast</a>
+  </li>
+{% endblock %}
+
+{% block content %}
+<br>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Item ID</th>
+            <th scope="col">Ideal Inventory Volume For Coming Month</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for pair in output %}
+        <tr>
+            <td>{{ pair[0] }}</td>
+            <td>{{ pair [1] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

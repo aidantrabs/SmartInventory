@@ -1,6 +1,5 @@
 {% extends "base_generic.html" %}
 {% block title %} <title> Inventory Management </title> {% endblock %}
-
 {% block content %}
     
     <!--
@@ -9,30 +8,19 @@
             {{ table|safe }}
         {% endfor %}
     -->
-    {{db}}
-      <p></p>
     
-        <form action="/" method="POST" enctype="multipart/form-data">
-      <p></p>
 
-        <form action="/" method="POST" enctype="multipart/form-data">
-      <p></p>
 
-        <form action="/" method="POST" enctype="multipart/form-data">
-      <p></p>
-
-        <form action="/" method="POST" enctype="multipart/form-data">
-      <p></p>
-
-        <form action="/" method="POST" enctype="multipart/form-data">
-      <p></p>
-
-        <form action="/" method="POST" enctype="multipart/form-data">
-      <p></p>
-
-        <form action="/" method="POST" enctype="multipart/form-data">
-          <input type="file" id="trainingData" name="filename">
-          <input type="submit">
-        </form>
+    <br><br>
+<h3>Upload your sales and inventory data as a .csv spreadsheet</h3>
+  <br><br>      
+  <div class="input-group mb-3">
+</form>
+    <div class="input-group-prepend">
+        <form action="/predictions" method="POST" enctype="multipart/form-data">
+        <input type="file" id="trainingData" name="filename" class="btn btn-outline-success my-2 my-sm-0">
+        <input type="submit" class="btn btn-outline-success my-2 my-sm-0">
+    </div></form>
+  </div>
 
 {% endblock %}
