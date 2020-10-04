@@ -6,7 +6,9 @@ app = Flask(__name__)
 @app.route("/", methods=["POST", 'GET'])
 def main():    
     if request.method == 'POST':
-        filename = request.form['filename']
+        file = request.files['filename']
+        filename = file.filename
+        #we can also have input = file.read()
         #output = train.linearRegression( filename )
         return render_template("output.html", output = filename)
     else: 
