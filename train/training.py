@@ -12,18 +12,6 @@ class LinReg:
     y = None
     df = None
 
-<<<<<<< HEAD
-    def __init__(self, filename ):
-        df = pd.read_csv( filename, nrows=99999 )
-        try: 
-            df = df[['Date', 'item_id', 'item_price', 'item_cnt_day']]
-        #if df.columns < 4: #hmm I think it will always have columns just some of them are na... i believe once its completely blank its not registered
-        except: 
-            raise Exception( "The file is not in the right format" )
-        self.df = df
-
-
-=======
     def __init__(self, filename):
         df = pd.csv_read( filename )
         df = df[['item_id', 'item_price', 'item_cnt_day', 'date']]
